@@ -1,0 +1,23 @@
+<h1><%= link_to 'RailsCampBlog', root_path %></h1>
+
+<%= form_for @post do |f| %>
+<p>
+    <p>タイトル</p>
+    <%= f.text_field :title %>
+    <% if @post.errors.messages[:title].any? %>
+    <span class="error"><%= @post.errors.messages[:title][0] %></span>
+    <% end %>
+</p>
+<p>
+    <p>記事内容</p>
+    <%= f.text_area :body %>
+    <% if @post.errors.messages[:body].any? %>
+    <span class="error"><%= @post.errors.messages[:body][0] %></span>
+    <% end %>
+</p>
+<p>
+    <%= f.submit %>
+</p>
+<% end %>
+
+<p class="rights">Copyright RailsCamp 2015 All Rights Reserved</p>
